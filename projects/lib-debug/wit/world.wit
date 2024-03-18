@@ -1,52 +1,22 @@
-package unstable: debugger;
+package libw: debug;
 
-world debugger {
-  import print;
+world debug {
+  import types;
+  export print-i8: func(value: s8);
+  export print-i16: func(value: s16);
+  export print-i32: func(value: s32);
+  export print-i64: func(value: s64);
+  export print-u8: func(value: u8);
+  export print-u16: func(value: u16);
+  export print-u32: func(value: u32);
+  export print-u64: func(value: u64);
+  export print-f32: func(value: float32);
+  export print-f64: func(value: float64);
+  export print-char: func(value: char);
+  export print-str: func(value: string);
+  export print-list-u8: func(value: list<u8>);
 }
 
-interface print {
-  record point {
-    x: f32,
-    y: f32,
-  }
+interface types {
 
-  // values of this type will be one of the specified cases
-  variant human {
-    baby,
-    child(u32), // optional type payload
-    adult,
-  }
-
-  // similar to `variant`, but no type payloads
-  enum errno {
-    too-big,
-    too-small,
-    too-fast,
-    too-slow,
-  }
-
-  // a bitflags type
-  flags permissions {
-    read,
-    write,
-    exec,
-  }
-
-  print-i8: func(value: s8);
-  print-i16: func(value: s16);
-  print-i32: func(value: s32);
-  print-i64: func(value: s64);
-  print-u8: func(value: u8);
-  print-u16: func(value: u16);
-  print-u32: func(value: u32);
-  print-u64: func(value: u64);
-  print-f32: func(value: float32);
-  print-f64: func(value: float64);
-  print-char: func(value: char);
-  print-str: func(value: string);
-  print-tuple: func(value: tuple<u8,s8>);
-  print-point: func(value: point);
-  print-human: func(value: human);
-  print-errno: func(value: errno);
-  print-permissions: func(value: permissions);
 }

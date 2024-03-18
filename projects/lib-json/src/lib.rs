@@ -8,7 +8,7 @@ wit_bindgen::generate!({
     world: "debug",
 });
 
-/// The libw/debug host
+
 #[derive(Copy, Clone, Debug)]
 pub struct HostDebug {}
 

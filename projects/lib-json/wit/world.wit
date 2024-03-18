@@ -1,0 +1,21 @@
+package libw: json;
+
+world json {
+  import types;
+  export to-string: func(value: json, config: formatter);
+}
+
+interface types {
+  variant json {
+    null,
+    boolean(bool),
+    number(f32),
+    str(string),
+    array(list<json>),
+    object,
+  }
+
+  record formatter {
+    indent: string,
+  }
+}
